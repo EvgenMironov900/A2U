@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2U Pro - Редактор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .editor {
+            width: 100%;
+            height: 200px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 10px 0;
+            background: #f9f9f9;
+        }
+        .controls {
+            margin: 15px 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #007cba;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .style-buttons {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+        .style-btn {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 A2U Pro - Редактор</h1>
+        
+        <div class="controls">
+            <button onclick="pasteFromClipboard()">📋 Вставить из буфера</button>
+            <button onclick="clearEditor()">🗑️ Очистить</button>
+        </div>
+
+        <div 
+            id="editor" 
+            class="editor" 
+            contenteditable="true"
+            placeholder="Введите текст здесь... Можно выделять части текста и применять стили!"
+        ></div>
+
+        <div class="style-buttons">
+            <button class="style-btn" onclick="applyStyle(1)">①</button>
+            <button class="style-btn" onclick="applyStyle(2)">➀</button>
+            <button class="style-btn" onclick="applyStyle(8)">𝟏</button>
+            <button class="style-btn" onclick="applyStyle(15)">₁</button>
+            <button class="style-btn" onclick="applyStyle(16)">🄂</button>
+        </div>
+
+        <select id="styleSelect" onchange="applyStyle(this.value)">
+            <!-- Стили заполнятся JavaScript -->
+        </select>
+    </div>
+
+    <script>
+        // Базовые стили (пока без обратного преобразования)
+        const styles = [
+            { name: "ASCII", symbols: ["0","1","2","3","4","5","6","7","8","9","+","-","*","/","(",")"], example: "(1+2)*3=9" },
+            { name: "Квадратные", symbols: ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣","➕","➖","✖","➗","❨","❩"], example: "(1️⃣+2️⃣)*3️⃣=9️⃣" },
+            { name: "В круге", symbols: ["⓪","①","②","③","④","⑤","⑥","⑦","⑧","⑨","+","-","*","/","(",")"], example: "(①+②)*③=⑨" }
+        ];
+
+        // Инициализация
+        function initialize() {
+            const select = document.getElementById('styleSelect');
+            styles.forEach((style, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `${index}: ${style.example}`;
+                select.appendChild(option);
+            });
+        }
+
+        // Основная функция преобразования
+        function applyStyle(styleIndex) {
+            const editor = document.getElementById('editor');
+            const selection = window.getSelection();
+            
+            if (selection.toString().length > 0) {
+                // Преобразуем выделенный текст
+                const selectedText = selection.toString();
+                const transformedText = transformText(selectedText, parseInt(styleIndex));
+                
+                // Заменяем выделенный текст
+                const range = selection.getRangeAt(0);
+                range.deleteContents();
+                range.insertNode(document.createTextNode(transformedText));
+            } else {
+                // Если ничего не выделено - преобразуем весь текст
+                editor.innerHTML = transformText(editor.innerHTML, parseInt(styleIndex));
+            }
+        }
+
+        // Преобразование текста (пока только прямое)
+        function transformText(text, styleIndex) {
+            if (styleIndex === 0) return text; // Пока ASCII оставляем как есть
+            
+            const asciiSymbols = styles[0].symbols;
+            const targetSymbols = styles[styleIndex].symbols;
+            
+            let result = "";
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                let found = false;
+                
+                for (let j = 0; j < asciiSymbols.length; j++) {
+                    if (char === asciiSymbols[j]) {
+                        char = targetSymbols[j];
+                        found = true;
+                        break;
+                    }
+                }
+                result += char;
+            }
+            return result;
+        }
+
+        // Вставка из буфера
+        async function pasteFromClipboard() {
+            try {
+                const text = await navigator.clipboard.readText();
+                document.getElementById('editor').innerText += text;
+            } catch (err) {
+                alert('Не удалось вставить из буфера');
+            }
+        }
+
+        // Очистка редактора
+        function clearEditor() {
+            document.getElementById('editor').innerHTML = '';
+        }
+
+        // Запуск при загрузке
+        document.addEventListener('DOMContentLoaded', initialize);
+    </script>
+</body>
+</html>
