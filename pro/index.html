@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2U - Ascii to Unicode Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .unified-editor {
+            width: 100%;
+            height: 250px;
+            margin: 15px 0;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 18px;
+            line-height: 1.5;
+            resize: vertical;
+        }
+        .style-selector {
+            margin: 15px 0;
+        }
+        select {
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        button {
+            padding: 15px 25px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background: #007cba;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background: #005a87;
+        }
+
+        /* Мобильные стили */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            select, .unified-editor, button {
+                font-size: 16px;
+            }
+            button {
+                padding: 12px 20px;
+                display: block;
+                width: 100%;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 A2U - Ascii to Unicode Converter</h1>
+        
+        <div class="style-selector">
+            <label for="styleSelect">Выберите стиль:</label>
+            <select id="styleSelect">
+                <!-- Стили будут заполнены JavaScript -->
+            </select>
+        </div>
+        
+        <!-- ЕДИНОЕ ОКНО - и ввод, и вывод, и редактирование -->
+        <textarea 
+            id="unifiedEditor" 
+            class="unified-editor"
+            placeholder="Введите текст с цифрами и символами: 0123456789+-*/()"></textarea>
+        
+        <div class="controls">
+            <button onclick="convertText()">Преобразовать</button>
+            <button onclick="copyToClipboard()">Копировать результат</button>
+        </div>
+    </div>
+
+    <script>
+        // ВСЕ 17 СТИЛЕЙ как в оригинальной функции
+        const styles = [
+            { name: "ASCII", symbols: ["0","1","2","3","4","5","6","7","8","9","+","-","*","/","(",")"], example: "(1+2)*3=9" },
+            { name: "Квадратные", symbols: ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣","➕","➖","✖","➗","❨","❩"], example: "(1️⃣+2️⃣)*3️⃣=9️⃣" },
+            { name: "В круге только цифры", symbols: ["⓪","①","②","③","④","⑤","⑥","⑦","⑧","⑨","+","-","*","/","(",")"], example: "(①+②)*③=⑨" },
+            { name: "В круге", symbols: ["⓪","①","②","③","④","⑤","⑥","⑦","⑧","⑨","⊕","⊖","⊛","⊘","(",")"], example: "(①⊕②)⊛③=⑨" },
+            { name: "В чёрном круге", symbols: ["⓿","❶","❷","❸","❹","❺","❻","❼","❽","❾","+","-","*","/","(",")"], example: "(❶+❷)*❸=❾" },
+            { name: "В белом круге без засечек только цифры", symbols: ["⓪","➀","➁","➂","➃","➄","➅","➆","➇","➈","+","-","*","/","(",")"], example: "(➀+➁)*➂=➈" },
+            { name: "В белом круге без засечек", symbols: ["⓪","➀","➁","➂","➃","➄","➅","➆","➇","➈","⊕","⊖","⊛","⊘","(",")"], example: "(➀⊕➁)⊛➂=➈" },
+            { name: "В чёрном круге без засечек", symbols: ["⓿","➊","➋","➌","➍","➎","➏","➐","➑","➒","+","-","*","/","(",")"], example: "(➊+➋)*➌=➒" },
+            { name: "Жирные", symbols: ["𝟎","𝟏","𝟐","𝟑","𝟒","𝟓","𝟔","𝟕","𝟖","𝟗","➕","➖","✖","➗","❨","❩"], example: "(𝟏+𝟐)*𝟑=𝟗" },
+            { name: "Двойные", symbols: ["𝟘","𝟙","𝟚","𝟛","𝟜","𝟝","𝟞","𝟟","𝟠","𝟡","➕","➖","✖","➗","⦅","⦆"], example: "(𝟙+𝟚)*𝟛=𝟡" },
+            { name: "Без засечек", symbols: ["𝟢","𝟣","𝟤","𝟥","𝟦","𝟧","𝟨","𝟩","𝟪","𝟫","+","-","*","/","(",")"], example: "(𝟣+𝟤)*𝟥=𝟫" },
+            { name: "Жирные без засечек", symbols: ["𝟬","𝟭","𝟮","𝟯","𝟰","𝟱","𝟲","𝟳","𝟴","𝟵","➕","➖","✖","➗","❨","❩"], example: "(𝟭+𝟮)*𝟯=𝟵" },
+            { name: "Моноширинные", symbols: ["𝟶","𝟷","𝟸","𝟹","𝟺","𝟻","𝟼","𝟽","𝟾","𝟿","+","-","*","/","(",")"], example: "(𝟷+𝟸)*𝟹=𝟿" },
+            { name: "Полноширинные", symbols: ["０","１","２","３","４","５","６","７","８","９","+","-","*","/","(",")"], example: "(１+２)*３=９" },
+            { name: "Верхний индекс", symbols: ["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹","⁺","⁻","⁼","⁽","⁾"], example: "(¹+²)*³=⁹" },
+            { name: "Нижний индекс", symbols: ["₀","₁","₂","₃","₄","₅","₆","₇","₈","₉","₊","₋","₌","₍","₎"], example: "(₁+₂)*₃=₉" },
+            { name: "С точкой", symbols: ["🄀","⒈","⒉","⒊","⒋","⒌","⒍","⒎","⒏","⒐","+","-","*","/","(",")"], example: "(⒈+⒉)*⒊=⒐" }
+        ];
+
+        // Инициализация селектора стилей
+        function initializeStyles() {
+            const select = document.getElementById('styleSelect');
+            styles.forEach((style, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `${index}: ${style.example}`;
+                select.appendChild(option);
+            });
+            select.value = 2; // По умолчанию как в оригинале
+        }
+
+        // НЕВИДИМАЯ ЗАЩИТА - детектор квадратных символов
+        function isSquareSymbolAt(text, position) {
+            if (position > text.length - 3) return false;
+            
+            const char = text[position];
+            const modifier = text[position + 1];
+            const variation = text[position + 2];
+            
+            // Магия: проверяем последовательность цифра + модификатор + вариационный селектор
+            return (char >= '0' && char <= '9') && 
+                   modifier === '️' && 
+                   variation === '⃣';
+        }
+
+        // УМНОЕ ПРЕОБРАЗОВАНИЕ с невидимой защитой
+        function ascii2Unicode(text, styleIndex = 2) {
+            if (!text) return "";
+            
+            const asciiSymbols = styles[0].symbols;
+            const targetSymbols = styles[styleIndex].symbols;
+            
+            let result = "";
+            let i = 0;
+            
+            while (i < text.length) {
+                let char = text[i];
+                let found = false;
+                
+                // МАГИЯ: незаметно защищаем квадратные символы
+                if (isSquareSymbolAt(text, i)) {
+                    // Пропускаем весь квадратный символ (3 символа)
+                    result += text.substring(i, i + 3);
+                    i += 3;
+                    continue;
+                }
+                
+                // Обычное преобразование для всех остальных случаев
+                for (let j = 0; j < asciiSymbols.length; j++) {
+                    if (char === asciiSymbols[j]) {
+                        char = targetSymbols[j];
+                        found = true;
+                        break;
+                    }
+                }
+                
+                result += char;
+                i++;
+            }
+            
+            return result;
+        }
+
+        // Преобразование текста
+        function convertText() {
+            const editor = document.getElementById('unifiedEditor');
+            const input = editor.value;
+            const styleIndex = parseInt(document.getElementById('styleSelect').value);
+            const result = ascii2Unicode(input, styleIndex);
+            
+            // Записываем результат обратно в ТО ЖЕ окно
+            editor.value = result;
+        }
+
+        // Копирование в буфер обмена
+        function copyToClipboard() {
+            const editor = document.getElementById('unifiedEditor');
+            const result = editor.value;
+            
+            // Пробуем современный метод
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(result).then(() => {
+                    alert('Текст скопирован в буфер обмена!');
+                }).catch(() => {
+                    // Если не сработало - используем старый метод
+                    fallbackCopyToClipboard(result);
+                });
+            } else {
+                // Используем старый метод для мобильных
+                fallbackCopyToClipboard(result);
+            }
+        }
+
+        // Резервный метод для мобильных
+        function fallbackCopyToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                alert('Текст скопирован!');
+            } catch (err) {
+                alert('Не удалось скопировать текст: ' + err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Инициализация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeStyles();
+        });
+    </script>
+</body>
+</html>
 
