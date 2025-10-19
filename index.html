@@ -58,23 +58,37 @@
 
         /* Мобильные стили */
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 20px;
-            }
-            select, .unified-editor, button {
-                font-size: 16px;
-            }
-            button {
-                padding: 12px 20px;
-                display: block;
-                width: 100%;
-                margin: 8px 0;
-            }
-        }
-    </style>
+          body {
+              padding: 8px; /* Уменьшаем отступы */
+          }
+          .container {
+              padding: 15px; /* Уменьшаем внутренние отступы */
+          }
+          h1 {
+              font-size: 18px; /* Уменьшаем размер заголовка */
+              margin: 5px 0;  /* Уменьшаем отступы вокруг заголовка */
+              text-align: center;
+          }
+          .unified-editor {
+              height: 150px;  /* Увеличиваем с 120px до 150px */
+              font-size: 16px;
+              margin: 8px 0;
+         }
+          .style-selector {
+              margin: 10px 0; /* Уменьшаем отступы */
+          }
+          select, button {
+              font-size: 16px;
+          }
+          button {
+              padding: 10px 15px; /* Немного уменьшаем кнопки */
+              display: block;
+              width: 100%;
+              margin: 6px 0; /* Уменьшаем отступы между кнопками */
+          }
+      }
+      
+      </style>
 </head>
 <body>
     <div class="container">
@@ -148,17 +162,9 @@
         }
 
         // УМНОЕ ПРЕОБРАЗОВАНИЕ с невидимой защитой
-
-        // ВЕЛИКОЛЕПНОЕ ПРЕОБРАЗОВАНИЕ с правилом Юрия Юрьевича
         function ascii2Unicode(text, styleIndex = 2) {
             if (!text) return "";
             
-            // ВОЛШЕБНЫЙ РЕЖИМ 0: Unicode → ASCII (незаметно для пользователя)
-            if (styleIndex === 0) {
-                return unicodeToAscii(text);
-            }
-            
-            // Прямое преобразование ASCII → Unicode 
             const asciiSymbols = styles[0].symbols;
             const targetSymbols = styles[styleIndex].symbols;
             
@@ -169,14 +175,15 @@
                 let char = text[i];
                 let found = false;
                 
-                // ПРАВИЛО ЮРИЯ ЮРЬЕВИЧА: незаметно пропускаем квадратные символы
+                // МАГИЯ: незаметно защищаем квадратные символы
                 if (isSquareSymbolAt(text, i)) {
+                    // Пропускаем весь квадратный символ (3 символа)
                     result += text.substring(i, i + 3);
                     i += 3;
                     continue;
                 }
                 
-                // Плавное преобразование всего остального
+                // Обычное преобразование для всех остальных случаев
                 for (let j = 0; j < asciiSymbols.length; j++) {
                     if (char === asciiSymbols[j]) {
                         char = targetSymbols[j];
@@ -187,26 +194,6 @@
                 
                 result += char;
                 i++;
-            }
-            
-            return result;
-        }
-
-        // СУПЕР-ПРОСТОЕ ОБРАТНОЕ ПРЕОБРАЗОВАНИЕ
-        function unicodeToAscii(text) {
-            if (!text) return "";
-            
-            let result = text;
-            
-            // Проходим по всем стилям (кроме ASCII)
-            for (let styleIndex = 1; styleIndex < styles.length; styleIndex++) {
-                const unicodeSymbols = styles[styleIndex].symbols;
-                const asciiSymbols = styles[0].symbols;
-                
-                // Заменяем ВСЕ символы этого стила на ASCII
-                for (let i = 0; i < unicodeSymbols.length; i++) {
-                    result = result.split(unicodeSymbols[i]).join(asciiSymbols[i]);
-                }
             }
             
             return result;
