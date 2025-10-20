@@ -1,4 +1,4 @@
-# A2U - Ascii to Unicode Converter 🎨
+# A2️⃣U - Ascii to Unicode Converter 🎨
 
 **Превращаю скучные цифры в красивые Unicode символы!**
 
