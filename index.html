@@ -70,7 +70,7 @@
               text-align: center;
           }
           .unified-editor {
-              height: 250px;  /* Увеличиваем с 120px до 250px */
+              height: 200px;  /* Увеличиваем с 120px до 200px */
               font-size: 16px;
               margin: 8px 0;
          }
@@ -91,7 +91,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🔄 A2U - Ascii to Unicode Converter</h1>
+        <h1>🔄 <span style="margin-right: 30px;"></span>A2️⃣U - Ascii to Unicode Converter</h1>
         
         <div class="style-selector">
             <label for="styleSelect">Выберите стиль:</label>
@@ -110,6 +110,17 @@
             <button onclick="convertText()">Преобразовать</button>
             <button onclick="copyToClipboard()">Копировать результат</button>
         </div>
+        
+        <!-- СЮДА ДОБАВЛЯЕМ ССЫЛКУ НА README -->
+        <div style="text-align: center; margin-top: 20px; opacity: 0.7;">
+            <a href="https://github.com/EvgenMironov900/A2U/blob/main/README.md" 
+               target="_blank" 
+               style="text-decoration: none; color: #007cba; font-size: 14px;">
+                📖 О программе
+            </a>
+        </div>
+        
+        
     </div>
 
     <script>
@@ -281,3 +292,4 @@
     </script>
 </body>
 </html>
+
