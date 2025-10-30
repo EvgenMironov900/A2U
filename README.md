@@ -92,9 +92,13 @@ Project started as simple VBA function and evolved into full web application whi
 
 **Country: Russia 🇷🇺**
 
+*Made with ❤️ for everyone who loves beautiful digits!*
+
 ---
 
 # Русский
+
+# A2️⃣U - Конвертер Ascii в Unicode 🎨
 
 **Превращаю скучные цифры в красивые Unicode символы!**
 
