@@ -41,10 +41,12 @@
         }
         .controls {
             margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
         button {
             padding: 15px 25px;
-            margin: 5px;
             border: none;
             border-radius: 5px;
             background: #007cba;
@@ -56,45 +58,89 @@
             background: #005a87;
         }
 
+        /* Мультиязычный переключатель */
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .lang-btn {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 12px;
+            margin: 0;
+        }
+        .lang-btn.active {
+            background: #007cba;
+            color: white;
+            border-color: #007cba;
+        }
+
         /* Мобильные стили */
         @media (max-width: 768px) {
-          body {
-              padding: 8px; /* Уменьшаем отступы */
-          }
-          .container {
-              padding: 15px; /* Уменьшаем внутренние отступы */
-          }
-          h1 {
-              font-size: 18px; /* Уменьшаем размер заголовка */
-              margin: 5px 0;  /* Уменьшаем отступы вокруг заголовка */
-              text-align: center;
-          }
-          .unified-editor {
-              height: 200px;  /* Увеличиваем с 120px до 200px */
-              font-size: 16px;
-              margin: 8px 0;
-         }
-          .style-selector {
-              margin: 10px 0; /* Уменьшаем отступы */
-          }
-          select, button {
-              font-size: 16px;
-          }
-          button {
-              padding: 10px 15px; /* Немного уменьшаем кнопки */
-              display: block;
-              width: 100%;
-              margin: 6px 0; /* Уменьшаем отступы между кнопками */
-          }
-      }
+            body {
+                padding: 8px;
+            }
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 18px;
+                margin: 5px 0;
+                text-align: center;
+            }
+            .unified-editor {
+                height: 200px;
+                font-size: 16px;
+                margin: 8px 0;
+            }
+            .style-selector {
+                margin: 10px 0;
+            }
+            select, button {
+                font-size: 16px;
+            }
+            .controls {
+                display: block;
+            }
+            button {
+                padding: 10px 15px;
+                display: block;
+                width: 100%;
+                margin: 6px 0;
+            }
+            .lang-switcher {
+                position: static;
+                justify-content: center;
+                margin-bottom: 15px;
+                background: none;
+                box-shadow: none;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Переключатель языков -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLanguage('ru')">RU</button>
+        <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
+    </div>
+
     <div class="container">
-        <h1>🔄 <span style="margin-right: 30px;"></span>A2️⃣U - Ascii to Unicode Converter</h1>
+        <h1 id="main-title">🔄 <span style="margin-right: 30px;"></span>A2️⃣U - Конвертер Ascii в Unicode</h1>
         
         <div class="style-selector">
-            <label for="styleSelect">Выберите стиль:</label>
+            <label id="styleLabel" for="styleSelect">Выберите стиль:</label>
             <select id="styleSelect">
                 <!-- Стили будут заполнены JavaScript -->
             </select>
@@ -107,24 +153,74 @@
             placeholder="Введите текст с цифрами и символами: 0123456789+-*/()"></textarea>
         
         <div class="controls">
-            <button onclick="convertText()">Преобразовать</button>
-            <button onclick="copyToClipboard()">Копировать результат</button>
+            <button onclick="convertText()" id="convertBtn">Преобразовать</button>
+            <button onclick="copyToClipboard()" id="copyBtn">Копировать результат</button>
         </div>
         
-        <!-- СЮДА ДОБАВЛЯЕМ ССЫЛКУ НА README -->
+        <!-- Ссылка на README -->
         <div style="text-align: center; margin-top: 20px; opacity: 0.7;">
             <a href="https://github.com/EvgenMironov900/A2U/blob/main/README.md" 
                target="_blank" 
-               style="text-decoration: none; color: #007cba; font-size: 14px;">
+               style="text-decoration: none; color: #007cba; font-size: 14px;"
+               id="aboutLink">
                 📖 О программе
             </a>
         </div>
-        
-        
     </div>
 
     <script>
-        // ВСЕ 17 СТИЛЕЙ как в оригинальной функции
+        // Тексты для перевода
+        const translations = {
+            ru: {
+                title: "A2️⃣U - Конвертер Ascii в Unicode",
+                styleLabel: "Выберите стиль:",
+                editorPlaceholder: "Введите текст с цифрами и символами: 0123456789+-*/()",
+                convertBtn: "Преобразовать",
+                copyBtn: "Копировать результат",
+                aboutLink: "📖 О программе",
+                copySuccess: "Текст скопирован в буфер обмена!",
+                copyError: "Не удалось скопировать текст: "
+            },
+            en: {
+                title: "A2️⃣U - Ascii to Unicode Converter",
+                styleLabel: "Select style:",
+                editorPlaceholder: "Enter text with digits and symbols: 0123456789+-*/()",
+                convertBtn: "Convert",
+                copyBtn: "Copy result", 
+                aboutLink: "📖 About program",
+                copySuccess: "Text copied to clipboard!",
+                copyError: "Failed to copy text: "
+            }
+        };
+
+        let currentLang = 'ru';
+
+        // Функция переключения языка
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Обновляем кнопки переключателя
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Обновляем тексты интерфейса
+            updateInterfaceTexts();
+        }
+
+        // Обновление текстов интерфейса
+        function updateInterfaceTexts() {
+            const t = translations[currentLang];
+            document.getElementById('main-title').textContent = t.title;
+            document.getElementById('styleLabel').textContent = t.styleLabel;
+            document.getElementById('unifiedEditor').placeholder = t.editorPlaceholder;
+            document.getElementById('convertBtn').textContent = t.convertBtn;
+            document.getElementById('copyBtn').textContent = t.copyBtn;
+            document.getElementById('aboutLink').textContent = t.aboutLink;
+        }
+
+        // ВАШ ОРИГИНАЛЬНЫЙ КОД (без изменений)
         const styles = [
             { name: "ASCII", symbols: ["0","1","2","3","4","5","6","7","8","9","+","-","*","/","(",")"], example: "2*(3-1)=4" },
             { name: "Квадратные", symbols: ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣","➕","➖","✖","➗","❨","❩"], example: "2️⃣✖❨3️⃣➖1️⃣❩=4️⃣" },
@@ -154,7 +250,7 @@
                 option.textContent = `${index}: ${style.example}`;
                 select.appendChild(option);
             });
-            select.value = 2; // По умолчанию как в оригинале
+            select.value = 2;
         }
 
         // НЕВИДИМАЯ ЗАЩИТА - детектор квадратных символов
@@ -165,24 +261,19 @@
             const modifier = text[position + 1];
             const variation = text[position + 2];
             
-            // Магия: проверяем последовательность цифра + модификатор + вариационный селектор
             return (char >= '0' && char <= '9') && 
                    modifier === '️' && 
                    variation === '⃣';
         }
 
-        // УМНОЕ ПРЕОБРАЗОВАНИЕ с невидимой защитой
-
         // ВЕЛИКОЛЕПНОЕ ПРЕОБРАЗОВАНИЕ с правилом Юрия Юрьевича
         function ascii2Unicode(text, styleIndex = 2) {
             if (!text) return "";
             
-            // ВОЛШЕБНЫЙ РЕЖИМ 0: Unicode → ASCII (незаметно для пользователя)
             if (styleIndex === 0) {
                 return unicodeToAscii(text);
             }
             
-            // Прямое преобразование ASCII → Unicode 
             const asciiSymbols = styles[0].symbols;
             const targetSymbols = styles[styleIndex].symbols;
             
@@ -193,14 +284,12 @@
                 let char = text[i];
                 let found = false;
                 
-                // ПРАВИЛО ЮРИЯ ЮРЬЕВИЧА: незаметно пропускаем квадратные символы
                 if (isSquareSymbolAt(text, i)) {
                     result += text.substring(i, i + 3);
                     i += 3;
                     continue;
                 }
                 
-                // Плавное преобразование всего остального
                 for (let j = 0; j < asciiSymbols.length; j++) {
                     if (char === asciiSymbols[j]) {
                         char = targetSymbols[j];
@@ -222,12 +311,10 @@
             
             let result = text;
             
-            // Проходим по всем стилям (кроме ASCII)
             for (let styleIndex = 1; styleIndex < styles.length; styleIndex++) {
                 const unicodeSymbols = styles[styleIndex].symbols;
                 const asciiSymbols = styles[0].symbols;
                 
-                // Заменяем ВСЕ символы этого стила на ASCII
                 for (let i = 0; i < unicodeSymbols.length; i++) {
                     result = result.split(unicodeSymbols[i]).join(asciiSymbols[i]);
                 }
@@ -243,31 +330,29 @@
             const styleIndex = parseInt(document.getElementById('styleSelect').value);
             const result = ascii2Unicode(input, styleIndex);
             
-            // Записываем результат обратно в ТО ЖЕ окно
             editor.value = result;
         }
 
-        // Копирование в буфер обмена
+        // Копирование в буфер обмена (с multilingual сообщениями)
         function copyToClipboard() {
             const editor = document.getElementById('unifiedEditor');
             const result = editor.value;
+            const t = translations[currentLang];
             
-            // Пробуем современный метод
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(result).then(() => {
-                    alert('Текст скопирован в буфер обмена!');
+                    alert(t.copySuccess);
                 }).catch(() => {
-                    // Если не сработало - используем старый метод
                     fallbackCopyToClipboard(result);
                 });
             } else {
-                // Используем старый метод для мобильных
                 fallbackCopyToClipboard(result);
             }
         }
 
         // Резервный метод для мобильных
         function fallbackCopyToClipboard(text) {
+            const t = translations[currentLang];
             const textArea = document.createElement('textarea');
             textArea.value = text;
             textArea.style.position = 'fixed';
@@ -277,9 +362,9 @@
             
             try {
                 document.execCommand('copy');
-                alert('Текст скопирован!');
+                alert(t.copySuccess);
             } catch (err) {
-                alert('Не удалось скопировать текст: ' + err);
+                alert(t.copyError + err);
             }
             
             document.body.removeChild(textArea);
@@ -288,8 +373,8 @@
         // Инициализация при загрузке
         document.addEventListener('DOMContentLoaded', function() {
             initializeStyles();
+            updateInterfaceTexts();
         });
     </script>
 </body>
 </html>
-
