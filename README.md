@@ -16,6 +16,9 @@ A2U is a simple and elegant converter that transforms regular digits and math sy
 - Adding visual accents to texts
 - Children's creativity and learning
 
+> **What's the purpose of this creation?**  
+> As the saying goes, this program is like "butter in porridge": it makes digital life more cheerful and words more beautiful.
+
 ## 🎯 Features
 
 - **17 unique styles** - from emoji to mathematical symbols
@@ -110,6 +113,9 @@ A2U - это простой и элегантный конвертер, кото
 - Оформления сообщений в мессенджерах
 - Добавления визуального акцента в тексты
 - Детского творчества и обучения
+
+> **Для чего сие творение?**  
+> Как говаривал И.С. Барков, сия программа — «что масло в каше»: делает цифровую жизнь веселей и сказанное краше.
 
 ## 🎯 Особенности
 
