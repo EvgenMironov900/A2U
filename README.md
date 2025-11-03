@@ -5,7 +5,7 @@
 **Transform boring digits into beautiful Unicode symbols!**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://EvgenMironov900.github.io/A2U/)
-[![Version](https://img.shields.io/badge/version-2.0-blue)](https://github.com/EvgenMironov900/A2U)
+[![Version](https://img.shields.io/badge/version-2.1-blue)](https://github.com/EvgenMironov900/A2U)
 
 ## 🌟 What is this?
 
