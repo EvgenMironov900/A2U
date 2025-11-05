@@ -116,6 +116,15 @@ Project started as simple VBA function and evolved into full web application whi
 
 **Country: Russia 🇷🇺**
 
+## 📄 License
+
+© 2025 Evgeny Mironov. All rights reserved.
+
+This project is licensed under the MIT License - 
+see the [LICENSE](LICENSE) file for details.
+
+**You are free to use this project, but must attribute the original author.**
+
 *Made with ❤️ for everyone who loves beautiful digits!*
 
 # Русский
@@ -237,3 +246,12 @@ A2U - это простой и элегантный конвертер, кото
 **Страна: Россия 🇷🇺**
 
 *Сделано с ❤️ для всех, кто любит красивые цифры!*
+
+## 📄 Лицензия
+
+© 2025 Евгений Миронов. Все права защищены.
+
+Этот проект распространяется под лицензией MIT - 
+подробнее см. в файле [LICENSE](LICENSE).
+
+**Вы можете свободно использовать проект, но должны указывать оригинального автора.**
