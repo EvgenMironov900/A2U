@@ -5,7 +5,7 @@
 **Transform boring digits into beautiful Unicode symbols!**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://EvgenMironov900.github.io/A2U/)
-[![Version](https://img.shields.io/badge/version-2.1-blue)](https://github.com/EvgenMironov900/A2U)
+[![Version](https://img.shields.io/badge/version-3.0-blue)](https://github.com/EvgenMironov900/A2U)
 
 ## 🌟 What is this?
 
@@ -21,11 +21,31 @@ A2U is a simple and elegant converter that transforms regular digits and math sy
 
 ## 🎯 Features
 
-- **17 unique styles** - from emoji to mathematical symbols
+- **18 unique styles** - including new Random style!
 - **Reverse conversion** - revert everything with one click!
 - **Works everywhere** - desktop, phone, tablet
 - **Simple to use** - no distractions
 - **Copy to clipboard** - easy paste anywhere
+- **Multilingual** - Russian/English interface
+
+## 🎲 What's New in v3.0
+
+### ✨ Random Style
+**Style 17: 🎲 Random Style** - Each character converts to a random Unicode style! Perfect for:
+- Creative experiments and digital art
+- Children's playful learning
+- Testing the system's resilience
+
+**Example:** `5*(6-2)=10` → `⑤✖❨𝟞➖②❩🟰❶⓪`
+
+### 📱 Mobile Excellence
+- Add browser link to home screen - A2️⃣U icon displays perfectly!
+- Fully responsive touch interface
+
+### 🔄 System Resilience
+- **Chain conversions** remain fully reversible
+- **Multiple random applications** don't break the system
+- **Hotkeys** Ctrl+A/Ctrl+C work seamlessly
 
 ## 🚀 How to use
 
@@ -58,6 +78,7 @@ Style **"0: ASCII"** works like a magic "undo" button - converts Unicode symbols
 | 14 | `²⃰⁽³⁻¹⁾=⁵, yes? No! ⁴` | **Superscript** - for exponents and formulas |
 | 15 | `₂ₓ₍₃₋₁₎=₅, yes? No! ₄` | **Subscript** - for chemical formulas |
 | 16 | `⒉*(⒊-⒈)=⒌, yes? No! ⒋` | **With dot** - for numbered lists |
+| 17 | `🎲×(🎲-🎲)=🎲 (styles vary!)` | **Random** - each character gets random style! |
 
 ## 🌐 Online Access
 
@@ -97,13 +118,14 @@ Project started as simple VBA function and evolved into full web application whi
 
 *Made with ❤️ for everyone who loves beautiful digits!*
 
----
-
 # Русский
 
 # A2️⃣U - Конвертер Ascii в Unicode 🎨
 
 **Превращаю скучные цифры в красивые Unicode символы!**
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://EvgenMironov900.github.io/A2U/)
+[![Version](https://img.shields.io/badge/version-3.0-blue)](https://github.com/EvgenMironov900/A2U)
 
 ## 🌟 Что это такое?
 
@@ -119,11 +141,31 @@ A2U - это простой и элегантный конвертер, кото
 
 ## 🎯 Особенности
 
-- **17 уникальных стилей** - от эмодзи до математических символов
+- **18 уникальных стилей** - включая новый Случайный стиль!
 - **Обратное преобразование** - верните всё как было одним кликом!
 - **Работает везде** - десктоп, телефон, планшет
 - **Простота использования** - ничего лишнего
 - **Копирование в буфер** - удобно для вставки в другие приложения
+- **Мультиязычность** - русский/английский интерфейс
+
+## 🎲 Что нового в v3.0
+
+### ✨ Случайный стиль
+**Стиль 17: 🎲 Случайный стиль** - Каждый символ преобразуется в случайный Unicode-стиль! Идеально для:
+- Творческих экспериментов и цифрового искусства
+- Детских игровых занятий
+- Тестирования устойчивости системы
+
+**Пример:** `5*(6-2)=10` → `⑤✖❨𝟞➖②❩🟰❶⓪`
+
+### 📱 Мобильное совершенство
+- Добавляйте на рабочий экран ссылку из браузера - иконка A2️⃣U отображается идеально!
+- Полностью адаптивный сенсорный интерфейс
+
+### 🔄 Устойчивость системы
+- **Цепочки преобразований** остаются полностью обратимыми
+- **Многократные случайные применения** не ломают систему
+- **Горячие клавиши** Ctrl+A/Ctrl+C работают безупречно
 
 ## 🚀 Как использовать
 
@@ -156,6 +198,7 @@ A2U - это простой и элегантный конвертер, кото
 | 14 | `²⃰⁽³⁻¹⁾=⁵, да? Нет! ⁴` | **Верхний индекс** - для степеней и формул |
 | 15 | `₂ₓ₍₃₋₁₎=₅, да? Нет! ₄` | **Нижний индекс** - для химических формул |
 | 16 | `⒉*(⒊-⒈)=⒌, да? Нет! ⒋` | **С точкой** - для нумерованных списков |
+| 17 | `🎲×(🎲-🎲)=🎲 (стили меняются!)` | **Случайный** - каждый символ получает случайный стиль! |
 
 ## 🌐 Онлайн доступ
 
