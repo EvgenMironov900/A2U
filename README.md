@@ -114,7 +114,7 @@ Project started as simple VBA function and evolved into full web application whi
 ## How to contact?
 💬 Chat with me:  
 📨 **Telegram**: [Telegram](https://t.me/Evgenmironov900)  
-🌐 **VKontakte**: [VK](vk.com/id250971234)
+🌐 **VKontakte**: [VK](https://vk.com/id250971234)
 
 **Email: evgenmironov900@gmail.com**  
 **Additional email: evgen@ev-mi.ru**
@@ -248,7 +248,7 @@ A2U - это простой и элегантный конвертер, кото
 ## Как связаться?
 💬 Общайтесь со мной:  
 📨 **Telegram**: [Telegram](https://t.me/Evgenmironov900)  
-🌐 **ВКонтакте**: [VK](vk.com/id250971234)
+🌐 **ВКонтакте**: [VK](https://vk.com/id250971234)
 
 **Email: evgenmironov900@gmail.com**  
 **Доп. email: evgen@ev-mi.ru** 
