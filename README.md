@@ -151,6 +151,15 @@ Project started as simple VBA function and evolved into full web application whi
 
 **Country: Russia 🇷🇺**
 
+## 📄 License
+
+© 2025 Evgeny Mironov. All rights reserved.
+
+This project is licensed under the MIT License - 
+see the [LICENSE](https://github.com/EvgenMironov900/A2U/blob/5f88bd5cfb1c851aa7749abb2ea5db777d413ac9/LICENSE) file for details.
+
+**You are free to use this project, but must attribute the original author.**
+
 *Made with ❤️ for everyone who loves beautiful digits!*
 
 <a id="russian"></a>
@@ -311,4 +320,10 @@ A2U создан как **полностью автономный инструм
 
 **Страна: Россия 🇷🇺**
 
+## 📄 Лицензия
+© 2025 Евгений Миронов. Все права защищены.
+
+Этот проект распространяется под лицензией MIT - подробнее см. в файле [LICENSE](https://github.com/EvgenMironov900/A2U/blob/5f88bd5cfb1c851aa7749abb2ea5db777d413ac9/LICENSE).
+
+**Вы можете свободно использовать проект, но должны указывать оригинального автора.**
 *Сделано с ❤️ для всех, кто любит красивые цифры!*
