@@ -7,7 +7,7 @@
 **Transform boring digits into beautiful Unicode symbols!**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://EvgenMironov900.github.io/A2U/)
-[![Version](https://img.shields.io/badge/version-3.0-blue)](https://github.com/EvgenMironov900/A2U)
+[![Version](https://img.shields.io/badge/version-4.0-blue)](https://github.com/EvgenMironov900/A2U)
 
 ## 🌟 What is this?
 
@@ -171,7 +171,7 @@ see the [LICENSE](https://github.com/EvgenMironov900/A2U/blob/5f88bd5cfb1c851aa7
 **Превращаю скучные цифры в красивые Unicode символы!**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://EvgenMironov900.github.io/A2U/)
-[![Версия](https://img.shields.io/badge/version-3.0-blue)](https://github.com/EvgenMironov900/A2U)
+[![Версия](https://img.shields.io/badge/version-4.0-blue)](https://github.com/EvgenMironov900/A2U)
 
 ## 🌟 Что это такое?
 
