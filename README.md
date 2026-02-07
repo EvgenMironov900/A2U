@@ -1,6 +1,8 @@
+# English<a id="english"></a>
+
 # A2️⃣U - Ascii to Unicode Converter 🎨
 
-**🇬🇧 English** | [🇷🇺 Русский](#русский)
+**🇬🇧 English** | [🇷🇺 Русский](#russian)
 
 **Transform boring digits into beautiful Unicode symbols!**
 
@@ -17,7 +19,9 @@ A2U is a simple and elegant converter that transforms regular digits and math sy
 - Children's creativity and learning
 
 > **What's the purpose of this creation?**  
-> As the saying goes, this program is like "butter in porridge": it makes digital life more cheerful and words more beautiful.
+> As the 18th-century Russian poet Ivan Barkov used to say:  
+> "Like meat in shchi, like butter in porridge —  
+> it makes digital life more cheerful, and spoken words more beautiful."
 
 ## 🎯 Features
 
@@ -28,6 +32,19 @@ A2U is a simple and elegant converter that transforms regular digits and math sy
 - **Copy to clipboard** - easy paste anywhere
 - **Multilingual** - Russian/English interface
 
+## 📱 QR Code & Offline Sharing (New in v4.0!)
+
+**Generate QR codes even without internet!**
+
+![A2U QR Code](https://raw.githubusercontent.com/EvgenMironov900/A2U/main/qr_A2U_eng.png)
+
+**How it works:**
+1. Open A2U in your browser
+2. Click the **"🎨 Create QR Code"** button (bottom of the page)
+3. Scan or save the QR code to share
+4. **Works offline** - save the page to your phone first!
+
+> **✨ Version 4.0 Feature:** The built-in QR code generator works completely offline. Download the page once, and you can create shareable QR codes anytime, anywhere.
 ## 🎲 What's New in v3.0
 
 ### ✨ Random Style
@@ -36,16 +53,29 @@ A2U is a simple and elegant converter that transforms regular digits and math sy
 - Children's playful learning
 - Testing the system's resilience
 
-**Example:** `5*(6-2)=10` → `⑤✖❨𝟞➖②❩🟰❶⓪`
+**Example:** `5*(6-4)=10` → `⑤✖❨𝟞➖④❩🟰❶⓪`
 
 ### 📱 Mobile Excellence
 - Add browser link to home screen - A2️⃣U icon displays perfectly!
 - Fully responsive touch interface
 
-### 🔄 System Resilience
-- **Chain conversions** remain fully reversible
-- **Multiple random applications** don't break the system
-- **Hotkeys** Ctrl+A/Ctrl+C work seamlessly
+## 🌐 Online Access
+
+**Main version:** [https://EvgenMironov900.github.io/A2U/](https://EvgenMironov900.github.io/A2U/)
+
+#### 📂 How to Use Offline:
+1. Download `index.html` from the repository
+2. (Optional) Rename to `A2U.html` for convenience
+3. Open in any modern browser
+4. That's it! No internet needed
+
+#### 🏢 Perfect For These Scenarios:
+- **Corporate/Government networks** without internet access
+- **Educational institutions** with restricted connectivity
+- **Field research** and remote locations
+- **Secure environments** where cloud services are prohibited
+- **Legacy systems** with only basic browser capability
+- **Airplane mode** and travel without Wi-Fi
 
 ## 🚀 How to use
 
@@ -75,14 +105,16 @@ Style **"0: ASCII"** works like a magic "undo" button - converts Unicode symbols
 | 11 | `𝟮✖❨𝟯➖𝟭❩🟰𝟱, yes? No! 𝟰` | **Bold sans-serif** - power and clarity |
 | 12 | `𝟸*(𝟹-𝟷)=𝟻, yes? No! 𝟺` | **Monospace** - typewriter style |
 | 13 | `２*(３-１)=５, yes? No! ４` | **Full-width** - Eastern style |
-| 14 | `²˟⁽³⁻¹⁾⁼⁵, yes? No! ⁴` | **Superscript** - for exponents and formulas |
+| 14 | `²⃰⁽³⁻¹⁾=⁵, yes? No! ⁴` | **Superscript** - for exponents and formulas |
 | 15 | `₂ₓ₍₃₋₁₎=₅, yes? No! ₄` | **Subscript** - for chemical formulas |
 | 16 | `⒉*(⒊-⒈)=⒌, yes? No! ⒋` | **With dot** - for numbered lists |
 | 17 | `🎲×(🎲-🎲)=🎲 (styles vary!)` | **Random** - each character gets random style! |
 
-## 🌐 Online Access
-
-**Main version:** [https://EvgenMironov900.github.io/A2U/](https://EvgenMironov900.github.io/A2U/)
+#### 🔧 Technical Features:
+- Single HTML file containing everything
+- No external dependencies or API calls
+- All 18 Unicode styles embedded locally
+- Works like a digital pocket calculator
 
 ## 💻 Technologies
 
@@ -101,6 +133,9 @@ Project is open for improvements! If you have ideas:
 4. Push branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
 
+#### 💡 Philosophy:
+In an era of cloud dependence, A2U champions **digital self-sufficiency** — a tool that needs nothing but itself.
+
 ## 📝 History
 
 Project started as simple VBA function and evolved into full web application while keeping simplicity and elegance.
@@ -111,35 +146,23 @@ Project started as simple VBA function and evolved into full web application whi
 - Idea and development
 - Testing by assistant-granddaughter 😊
 
-## How to contact?
-💬 Chat with me:  
-📨 **Telegram**: [Telegram](https://t.me/Evgenmironov900)  
-🌐 **VKontakte**: [VK](https://vk.com/id250971234)
-
 **Email: evgenmironov900@gmail.com**  
 **Additional email: evgen@ev-mi.ru**
 
 **Country: Russia 🇷🇺**
 
-## 📄 License
-
-© 2025 Evgeny Mironov. All rights reserved.
-
-This project is licensed under the MIT License - 
-see the [LICENSE](LICENSE) file for details.
-
-**You are free to use this project, but must attribute the original author.**
-
 *Made with ❤️ for everyone who loves beautiful digits!*
 
+<a id="russian"></a>
 # Русский
 
 # A2️⃣U - Конвертер Ascii в Unicode 🎨
+[🇬🇧 English](#english) | **🇷🇺 Русский**
 
 **Превращаю скучные цифры в красивые Unicode символы!**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://EvgenMironov900.github.io/A2U/)
-[![Version](https://img.shields.io/badge/version-3.0-blue)](https://github.com/EvgenMironov900/A2U)
+[![Версия](https://img.shields.io/badge/version-3.0-blue)](https://github.com/EvgenMironov900/A2U)
 
 ## 🌟 Что это такое?
 
@@ -151,7 +174,9 @@ A2U - это простой и элегантный конвертер, кото
 - Детского творчества и обучения
 
 > **Для чего сие творение?**  
-> Как говаривал И.С. Барков, сия программа — «что масло в каше»: делает цифровую жизнь веселей и сказанное краше.
+> Как говаривал Иван Барков, русский поэт XVIII века:  
+> «Что мясо в щах, что масло в каше —  
+> с ней наша жизнь намного веселей, а сказанное — краше!»
 
 ## 🎯 Особенности
 
@@ -162,6 +187,20 @@ A2U - это простой и элегантный конвертер, кото
 - **Копирование в буфер** - удобно для вставки в другие приложения
 - **Мультиязычность** - русский/английский интерфейс
 
+## 📱 QR-код и офлайн-обмен (Новое в v4.0!)
+
+**Создавайте QR-коды даже без интернета!**
+
+![QR-код A2U](https://raw.githubusercontent.com/EvgenMironov900/A2U/main/qr_A2U_rus.png)
+
+**Как это работает:**
+1. Откройте A2U в браузере
+2. Нажмите кнопку **"🎨 Создать QR-код"** (внизу страницы)
+3. Отсканируйте или сохраните QR-код для обмена
+4. **Работает офлайн** — сначала сохраните страницу на телефон!
+
+> **✨ Возможность версии 4.0:** Встроенный генератор QR-кодов работает полностью автономно. Скачайте страницу один раз — и вы сможете создавать QR-коды для обмена в любое время и в любом месте.
+
 ## 🎲 Что нового в v3.0
 
 ### ✨ Случайный стиль
@@ -170,16 +209,33 @@ A2U - это простой и элегантный конвертер, кото
 - Детских игровых занятий
 - Тестирования устойчивости системы
 
-**Пример:** `5*(6-2)=10` → `⑤✖❨𝟞➖②❩🟰❶⓪`
+**Пример:** `5*(6-4)=10` → `⑤✖❨𝟞➖④❩🟰❶⓪`
 
 ### 📱 Мобильное совершенство
 - Добавляйте на рабочий экран ссылку из браузера - иконка A2️⃣U отображается идеально!
 - Полностью адаптивный сенсорный интерфейс
 
-### 🔄 Устойчивость системы
-- **Цепочки преобразований** остаются полностью обратимыми
-- **Многократные случайные применения** не ломают систему
-- **Горячие клавиши** Ctrl+A/Ctrl+C работают безупречно
+## 🌐 Онлайн доступ
+
+**Основная версия:** [https://EvgenMironov900.github.io/A2U/](https://EvgenMironov900.github.io/A2U/)
+
+## 🌐 Автономная работа
+
+A2U создан как **полностью автономный инструмент**, работающий где угодно после скачивания.
+
+#### 📂 Как использовать оффлайн:
+1. Скачайте `index.html` из репозитория
+2. (Опционально) Переименуйте в `A2U.html` для удобства
+3. Откройте в любом современном браузере
+4. Всё! Интернет не нужен
+
+#### 🏢 Идеально для:
+- **Корпоративных/государственных сетей** без доступа в интернет
+- **Образовательных учреждений** с ограниченным подключением
+- **Полевых исследований** и удалённых локаций
+- **Защищённых сред**, где облачные сервисы запрещены
+- **Устаревших систем** с только базовым браузером
+- **Режима полёта** и путешествий без Wi-Fi
 
 ## 🚀 Как использовать
 
@@ -209,14 +265,10 @@ A2U - это простой и элегантный конвертер, кото
 | 11 | `𝟮✖❨𝟯➖𝟭❩🟰𝟱, да? Нет! 𝟰` | **Жирные без засечек** - мощь и ясность |
 | 12 | `𝟸*(𝟹-𝟷)=𝟻, да? Нет! 𝟺` | **Моноширинные** - как из пишущей машинки |
 | 13 | `２*(３-１)=５, да? Нет! ４` | **Полноширинные** - восточный стиль |
-| 14 | `²˟⁽³⁻¹⁾⁼⁵, да? Нет! ⁴` | **Верхний индекс** - для степеней и формул |
+| 14 | `²⃰⁽³⁻¹⁾=⁵, да? Нет! ⁴` | **Верхний индекс** - для степеней и формул |
 | 15 | `₂ₓ₍₃₋₁₎=₅, да? Нет! ₄` | **Нижний индекс** - для химических формул |
 | 16 | `⒉*(⒊-⒈)=⒌, да? Нет! ⒋` | **С точкой** - для нумерованных списков |
 | 17 | `🎲×(🎲-🎲)=🎲 (стили меняются!)` | **Случайный** - каждый символ получает случайный стиль! |
-
-## 🌐 Онлайн доступ
-
-**Основная версия:** [https://EvgenMironov900.github.io/A2U/](https://EvgenMironov900.github.io/A2U/)
 
 ## 💻 Технологии
 
@@ -224,6 +276,12 @@ A2U - это простой и элегантный конвертер, кото
 - Адаптивный дизайн
 - Unicode символы
 - Clipboard API
+
+#### 🔧 Технические особенности:
+- Единственный HTML-файл содержит всё необходимое
+- Нет внешних зависимостей или вызовов API
+- Все 18 стилей Unicode встроены локально
+- Работает как цифровой карманный калькулятор
 
 ## 🤝 Разработка
 
@@ -235,6 +293,9 @@ A2U - это простой и элегантный конвертер, кото
 4. Запушьте ветку (`git push origin feature/amazing-feature`)
 5. Откройте Pull Request
 
+#### 💡 Философия:
+В эпоху облачной зависимости A2U отстаивает **цифровую самодостаточность** — инструмент, которому нужен только он сам.
+
 ## 📝 История
 
 Проект начался с простой VBA-функции и прошёл путь до полноценного веб-приложения, сохранив простоту и элегантность.
@@ -245,23 +306,9 @@ A2U - это простой и элегантный конвертер, кото
 - Идея и разработка
 - Тестирование помощником-внучкой 😊
 
-## Как связаться?
-💬 Общайтесь со мной:  
-📨 **Telegram**: [Telegram](https://t.me/Evgenmironov900)  
-🌐 **ВКонтакте**: [VK](https://vk.com/id250971234)
-
 **Email: evgenmironov900@gmail.com**  
 **Доп. email: evgen@ev-mi.ru** 
 
 **Страна: Россия 🇷🇺**
 
 *Сделано с ❤️ для всех, кто любит красивые цифры!*
-
-## 📄 Лицензия
-
-© 2025 Евгений Миронов. Все права защищены.
-
-Этот проект распространяется под лицензией MIT - 
-подробнее см. в файле [LICENSE](LICENSE).
-
-**Вы можете свободно использовать проект, но должны указывать оригинального автора.**
