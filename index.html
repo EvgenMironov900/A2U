@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Version 4.0.1 -->
+<!-- Version 4.1 -->
 
 <html lang="ru">
 <head>
@@ -116,6 +116,13 @@
             border-color: #007cba;
         }
 
+        /* Делает неактивную кнопку видимой */
+        .lang-btn:not(.active) {
+            opacity: 0.8;
+            border-color: #aaa;
+            color: #555;
+        }
+
         /* Мобильные стили */
         @media (max-width: 768px) {
             body {
@@ -189,18 +196,15 @@
             <button onclick="convertText()" id="convertBtn">Преобразовать</button>
             <button onclick="copyToClipboard()" id="copyBtn">Копировать результат</button>
         </div>
-        
-        <!-- Ссылка на README -->
-        <div style="text-align: center; margin-top: 20px; opacity: 0.7;">
-            <a href="https://github.com/EvgenMironov900/A2U/blob/main/README.md" 
-               target="_blank" 
-               style="text-decoration: none; color: #007cba; font-size: 14px;"
-               id="aboutLink">
-                📖 О программе
-            </a>
-        </div>
     </div>
 
+    <!-- Якорь-стрелки на QR-код -->
+    <div style="text-align: center; margin: 35px 0 20px 0;">
+        <div style="font-size: 24px; color: #1a5fb4; letter-spacing: 8px; font-weight: bold; line-height: 1.4;">
+            ↓↓↓↓ <span style="color: #2e8b57;">QR</span> ↓↓↓↓
+        </div>
+    </div>
+    </div> <!-- Закрывающий тег .container -->
     <script>
         // Тексты для перевода
         const translations = {
@@ -429,7 +433,7 @@
     </h2>
     
     <p id="qr-description" style="color: #555; margin-bottom: 20px; line-height: 1.5; max-width: 600px; margin-left: auto; margin-right: auto;">
-        Нажмите кнопку, чтобы создать QR-код. Он будет вести на основную онлайн-версию программы. <strong>Работает даже без интернета!</strong>
+        Нажмите кнопку, чтобы создать QR-код. Он будет вести на основную онлайн-версию программы. <br><strong>Работает даже без интернета!</strong>
     </p>
     
     <button id="generateQrBtn" 
@@ -447,9 +451,20 @@
         <strong>Готово!</strong> QR-код ведёт на основную версию A2U.
     </div>
     
+    <!-- Перенесённая и яркая ссылка "О программе" -->
+    <hr style="margin: 50px 0 30px 0; border: none; border-top: 1px solid #ddd;">
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="https://github.com/EvgenMironov900/A2U/blob/main/README.md" 
+           target="_blank" 
+           style="text-decoration: none; color: #1a5fb4; font-size: 15px; font-weight: bold;"
+           id="aboutLink">
+            📖 О программе
+        </a>
+    </div>
+
 <p id="qrHintText" style="font-size: 0.85em; color: #777; margin-top: 20px; font-style: italic;">
-    Сохраните страницу на телефон, и вы сможете создавать QR-коды где угодно!
-</p>
+      Сохраните страницу на телефон, и используйте программу даже без интернета!
+    </p>
 
 <!-- МЕСТО ДЛЯ ВСТАВКИ БИБЛИОТЕКИ QR-КОДА -->
 <script>
@@ -473,16 +488,16 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
 <script>
     // Тексты для перевода (дополняем существующие translations)
     translations.ru.qrTitle = "📱 Поделиться A2U (v4.0)";
-    translations.ru.qrDescription = "Нажмите кнопку, чтобы создать QR-код. Он будет вести на основную онлайн-версию программы. <strong>Работает даже без интернета!</strong>";
+    translations.ru.qrDescription = "Нажмите кнопку, чтобы создать QR-код. Он будет вести на основную онлайн-версию программы.<br> <strong>Работает даже без интернета!</strong>";
     translations.ru.qrButton = "🎨 Создать QR-код";
     translations.ru.qrReady = "<strong>Готово!</strong> QR-код ведёт на основную версию A2U.";
-    translations.ru.qrHint = " Сохраните страницу на телефон, и вы сможете создавать QR-коды где угодно!";
+    translations.ru.qrHint = " Сохраните страницу на телефон, и используйте программу даже без интернета!";
     
     translations.en.qrTitle = "📱 Share A2U (v4.0)";
-    translations.en.qrDescription = "Click the button to create a QR code. It will lead to the main online version of the program. <strong>Works even offline!</strong>";
+    translations.en.qrDescription = "Click the button to create a QR code. It will lead to the main online version of the program.<br> <strong>Works even offline!</strong>";
     translations.en.qrButton = "🎨 Create QR Code";
     translations.en.qrReady = "<strong>Ready!</strong> QR code points to the main A2U version.";
-    translations.en.qrHint = " Save this page to your phone, and you can create QR codes anywhere!";
+    translations.en.qrHint = " Save the page to your phone and use the program even without the Internet!";
 
     // Функция обновления текста в блоке QR-кода
     function updateQrTexts() {
@@ -556,8 +571,9 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
         // Небольшая задержка для гарантированной инициализации основного скрипта
         setTimeout(updateQrTexts, 100);
     });
-</script>
+
 <!-- ================= КОНЕЦ БЛОКА v4.0: ГЕНЕРАТОР QR-КОДА ================= -->
+</script>
 
 </body>
 </html>

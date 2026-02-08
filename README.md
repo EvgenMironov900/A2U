@@ -7,7 +7,7 @@
 **Transform boring digits into beautiful Unicode symbols!**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://EvgenMironov900.github.io/A2U/)
-[![Version](https://img.shields.io/badge/version-4.0.1-blue)](https://github.com/EvgenMironov900/A2U)
+[![Version](https://img.shields.io/badge/version-4.1-blue)](https://github.com/EvgenMironov900/A2U)
 
 ## 🌟 What is this?
 
@@ -32,7 +32,7 @@ A2U is a simple and elegant converter that transforms regular digits and math sy
 - **Copy to clipboard** - easy paste anywhere
 - **Multilingual** - Russian/English interface
 
-## 📱 QR Code & Offline Sharing (New in v4.0!)
+## 📱 QR Code & Offline Sharing (New in v4.1!)
 
 **Generate QR codes even without internet!**
 
@@ -44,7 +44,7 @@ A2U is a simple and elegant converter that transforms regular digits and math sy
 3. Scan or save the QR code to share
 4. **Works offline** - save the page to your phone first!
 
-> **✨ Version 4.0.1 Feature:** The built-in QR code generator works completely offline. Download the page once, and you can create shareable QR codes anytime, anywhere.
+> **✨ Version 4.1 Feature:** The built-in QR code generator works completely offline. Download the page once, and you can create shareable QR codes anytime, anywhere.
 ## 🎲 What's New in v3.0
 
 ### ✨ Random Style
@@ -172,7 +172,7 @@ see the [LICENSE](https://github.com/EvgenMironov900/A2U/blob/5f88bd5cfb1c851aa7
 **Превращаю скучные цифры в красивые Unicode символы!**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://EvgenMironov900.github.io/A2U/)
-[![Версия](https://img.shields.io/badge/version-4.0.1-blue)](https://github.com/EvgenMironov900/A2U)
+[![Версия](https://img.shields.io/badge/version-4.1-blue)](https://github.com/EvgenMironov900/A2U)
 
 ## 🌟 Что это такое?
 
@@ -197,7 +197,7 @@ A2U - это простой и элегантный конвертер, кото
 - **Копирование в буфер** - удобно для вставки в другие приложения
 - **Мультиязычность** - русский/английский интерфейс
 
-## 📱 QR-код и офлайн-обмен (Новое в v4.0!)
+## 📱 QR-код и офлайн-обмен (Новое в v4.1!)
 
 **Создавайте QR-коды даже без интернета!**
 
@@ -209,7 +209,7 @@ A2U - это простой и элегантный конвертер, кото
 3. Отсканируйте или сохраните QR-код для обмена
 4. **Работает офлайн** — сначала сохраните страницу на телефон!
 
-> **✨ Возможность версии 4.0:** Встроенный генератор QR-кодов работает полностью автономно. Скачайте страницу один раз — и вы сможете создавать QR-коды для обмена в любое время и в любом месте.
+> **✨ Возможность версии 4.1:** Встроенный генератор QR-кодов работает полностью автономно. Скачайте страницу один раз — и вы сможете создавать QR-коды для обмена в любое время и в любом месте.
 
 ## 🎲 Что нового в v3.0
 
