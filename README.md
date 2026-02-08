@@ -7,7 +7,7 @@
 **Transform boring digits into beautiful Unicode symbols!**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://EvgenMironov900.github.io/A2U/)
-[![Version](https://img.shields.io/badge/version-4.0-blue)](https://github.com/EvgenMironov900/A2U)
+[![Version](https://img.shields.io/badge/version-4.0.1-blue)](https://github.com/EvgenMironov900/A2U)
 
 ## 🌟 What is this?
 
@@ -44,7 +44,7 @@ A2U is a simple and elegant converter that transforms regular digits and math sy
 3. Scan or save the QR code to share
 4. **Works offline** - save the page to your phone first!
 
-> **✨ Version 4.0 Feature:** The built-in QR code generator works completely offline. Download the page once, and you can create shareable QR codes anytime, anywhere.
+> **✨ Version 4.0.1 Feature:** The built-in QR code generator works completely offline. Download the page once, and you can create shareable QR codes anytime, anywhere.
 ## 🎲 What's New in v3.0
 
 ### ✨ Random Style
@@ -114,7 +114,6 @@ Style **"0: ASCII"** works like a magic "undo" button - converts Unicode symbols
 - Single HTML file containing everything
 - No external dependencies or API calls
 - All 18 Unicode styles embedded locally
-- Works like a digital pocket calculator
 
 ## 💻 Technologies
 
@@ -122,6 +121,8 @@ Style **"0: ASCII"** works like a magic "undo" button - converts Unicode symbols
 - Responsive design
 - Unicode symbols
 - Clipboard API
+
+**Open Source Credit:** This project includes QR code generation using [QRCode.js](https://github.com/davidshimjs/qrcodejs) by davidshimjs, licensed under MIT.
 
 ## 🤝 Development
 
@@ -171,7 +172,7 @@ see the [LICENSE](https://github.com/EvgenMironov900/A2U/blob/5f88bd5cfb1c851aa7
 **Превращаю скучные цифры в красивые Unicode символы!**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://EvgenMironov900.github.io/A2U/)
-[![Версия](https://img.shields.io/badge/version-4.0-blue)](https://github.com/EvgenMironov900/A2U)
+[![Версия](https://img.shields.io/badge/version-4.0.1-blue)](https://github.com/EvgenMironov900/A2U)
 
 ## 🌟 Что это такое?
 
@@ -286,11 +287,12 @@ A2U создан как **полностью автономный инструм
 - Unicode символы
 - Clipboard API
 
+**Использование Open Source:** Этот проект включает генерацию QR-кодов с использованием библиотеки [QRCode.js](https://github.com/davidshimjs/qrcodejs) от davidshimjs, распространяемой по лицензии MIT.
+
 #### 🔧 Технические особенности:
 - Единственный HTML-файл содержит всё необходимое
 - Нет внешних зависимостей или вызовов API
 - Все 18 стилей Unicode встроены локально
-- Работает как цифровой карманный калькулятор
 
 ## 🤝 Разработка
 
@@ -326,4 +328,5 @@ A2U создан как **полностью автономный инструм
 Этот проект распространяется под лицензией MIT - подробнее см. в файле [LICENSE](https://github.com/EvgenMironov900/A2U/blob/5f88bd5cfb1c851aa7749abb2ea5db777d413ac9/LICENSE).
 
 **Вы можете свободно использовать проект, но должны указывать оригинального автора.**
+
 *Сделано с ❤️ для всех, кто любит красивые цифры!*
