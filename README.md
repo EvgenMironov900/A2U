@@ -34,7 +34,7 @@ A2U is a simple and elegant converter that transforms regular digits and math sy
 
 ## 📱 QR Code (Added in v4.0)
 
-![A2U QR Code](https://raw.githubusercontent.com/EvgenMironov900/A2U/main/qr_A2U_eng.png)
+![A2U QR Code](https://raw.githubusercontent.com/EvgenMironov900/A2U/main/images/qr_A2U_eng.png)
 
 **How it works:**
 1. Open A2U in your browser
@@ -190,7 +190,7 @@ A2U - это простой и элегантный конвертер, кото
 
 ## 📱 QR-код (Добавлено в v4.0)
 
-![QR-код A2U](https://raw.githubusercontent.com/EvgenMironov900/A2U/main/qr_A2U_rus.png)
+![QR-код A2U](https://raw.githubusercontent.com/EvgenMironov900/A2U/main/images/qr_A2U_rus.png)
 
 **Как это работает:**
 1. Откройте A2U в браузере
