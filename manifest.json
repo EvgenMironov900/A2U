@@ -1,0 +1,23 @@
+{
+  "name": "A2U - Ascii to Unicode Converter",
+  "short_name": "A2U",
+  "description": "Преобразуйте скучные цифры в красивые Unicode символы! 18 стилей.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007cba",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
