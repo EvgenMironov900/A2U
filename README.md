@@ -303,6 +303,19 @@ A2U создан как **полностью автономный инструм
 
 **Страна: Россия 🇷🇺**
 
+
+## 📊 Моя статистика
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=EvgenMironov900&show_icons=true&theme=dark" alt="Статистика GitHub">
+  <br>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EvgenMironov900&layout=compact&theme=dark" alt="Топ языков">
+</div>
+
+> ⚠️ Статистика подтягивается с сервиса `github-readme-stats.vercel.app`. Если он тоже недоступен, вы можете просто убрать эти два блока.
+
+
+
 ## 📄 Лицензия
 © 2025-2026 Евгений Миронов. Все права защищены.
 
